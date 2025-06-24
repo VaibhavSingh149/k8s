@@ -1,3 +1,72 @@
+## 📝 Step-by-Step Guide
+
+1. Make the Pod Definition File (pod.yaml)
+- Everything in Kubernetes uses a YAML file. Here’s one that tells Kubernetes to run an NGINX server for us.
+
+- Copy this into a new file named pod.yaml:
+
+```bash
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+spec:
+  containers:
+  - name: nginx-container
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+``` 
+2. Deploy the Pod
+- Now we tell Kubernetes to create this pod using the command line.
+
+- Open terminal and run:
+```bash
+kubectl apply -f pod.yaml
+```
+
+- If it works, we should see something like this:
+`pod/nginx-pod created`
+
+---
+3. Check If the Pod is Running
+Let’s make sure our pod is up and running:
+
+```bash
+kubectl get pods
+```
+
+For more details (like which node it's on):
+```bash
+kubectl get pods -o wide
+```
+
+4. See the Logs
+Let’s check the logs to make sure the NGINX server is starting correctly:
+```bash
+kubectl logs nginx-pod
+```
+
+5. Get More Info (For Troubleshooting)
+If something doesn’t work, this command gives you a lot of helpful info:
+```bash
+kubectl describe pod nginx-pod
+```
+
+- Now that everything looks fine, the pods will be visible
+![alt text](image-8.png)
+![alt text](image-9.png)
+
+- This confirms our build is successful
+
+- Pod configuration, `pods.yaml`
+![alt text](image-10.png)
+
+---
+--- 
+
 ## MongoDB + Mongo-Express on Kubernetes(KUBERNETES - TAKE HOME ASSINGMENT)\
 
 ### 🎯 Objective
