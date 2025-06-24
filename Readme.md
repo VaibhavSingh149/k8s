@@ -1,4 +1,4 @@
-## MongoDB + Mongo-Express on Kubernetes(KUBERNETES - TAKE HOME ASSINGMENT)\
+## MongoDB + Mongo-Express on Kubernetes
 
 ### 🎯 Objective
 - Deploy a secure, real-world, multi-tier application on Kubernetes using best practices for secrets and configuration. This project sets up a MongoDB database and a Mongo-Express web interface, all managed by Kubernetes.
